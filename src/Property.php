@@ -12,6 +12,7 @@ class Property
 
     /**
      * Checks if given property is set.
+     *
      * @param $prop
      * @return bool
      */
@@ -25,6 +26,7 @@ class Property
 
     /**
      * Returns the property value, unless property is not set, in which case it will return the given string.
+     *
      * @param $prop
      * @param string $str
      * @return string
@@ -39,6 +41,7 @@ class Property
 
     /**
      * Returns the property value.
+     *
      * @param $prop
      * @return mixed
      */
@@ -49,6 +52,7 @@ class Property
 
     /**
      * Sets the property and its value.
+     *
      * @param $prop
      * @param $value
      */
@@ -59,6 +63,7 @@ class Property
 
     /**
      * Push an element to the end of an array.
+     *
      * @param $prop
      * @param $value
      */
@@ -71,8 +76,24 @@ class Property
     }
 
     /**
+     * Unsets a property.
+     *
+     * @param $prop
+     * @return bool
+     */
+    public function forget($prop)
+    {
+        if (isset($this->{$prop})) {
+            unset($this->{$prop});
+            return true;
+        }
+        return false;
+    }
+
+    /**
      * Returns a json encoded version of the property. If no property is given, all properties will be returned.
      * This is useful when debugging.
+     *
      * @param bool $prop
      * @return string
      */
