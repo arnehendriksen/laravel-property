@@ -12,5 +12,15 @@
         "psr-4": {
             "ArneHendriksen\\LaravelProperty\\" : "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ArneHendriksen\\LaravelProperty\\PropertyServiceProvider"
+            ],
+            "aliases": {
+                "Property": "ArneHendriksen\\LaravelProperty\\Facades\\Property"
+            }
+        }
     }
 }
