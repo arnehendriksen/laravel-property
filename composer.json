@@ -9,6 +9,8 @@
     "license": "MIT",
     "require": {},
     "autoload": {
-      "psr-4": { "arnehendriksen\\LaravelProperty\\" : "src/" }
+        "psr-4": {
+            "ArneHendriksen\\LaravelProperty\\" : "src/"
+        }
     }
 }

@@ -1,42 +1,29 @@
-<?php namespace arnehendriksen\LaravelProperty;
+<?php
 
+namespace ArneHendriksen\LaravelProperty;
+
+use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 
-class PropertyServiceProvider extends ServiceProvider
+class PropertyServiceProvider extends ServiceProvider implements DeferrableProvider
 {
-
     /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
-     */
-    protected $defer = false;
-
-    /**
-     * Bootstrap the application events.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-    }
-
-    /**
-     * Register the service provider.
-     *
-     * @return void
+     * Register any application services.
      */
     public function register()
     {
-        return new Property();
+        $this->app->singleton('property', function ($app) {
+            return new Property();
+        });
     }
 
     /**
      * Get the services provided by the provider.
-     *
-     * @return array
      */
     public function provides()
     {
+        return [
+            'property',
+        ];
     }
 }

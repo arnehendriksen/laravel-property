@@ -1,15 +1,9 @@
-<?php namespace arnehendriksen\LaravelProperty;
+<?php
+
+namespace ArneHendriksen\LaravelProperty;
 
 class Property
 {
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-    }
-
     /**
      * Checks if given property is set.
      *
